@@ -4,13 +4,16 @@ Ember's dependency injection systems makes it easy to declare which services are
 
 That is usually the right behavior, because it's warning you about a mistake! But *sometimes* you want to check for the existence of a service and use it if it's present, but continue without it if it does not exist. This addon supports that use case:
 
-    import injectOptional from 'ember-inject-optional';
-    export default Component.extend({
-      // if there is a service named fastboot available in the app, it
-      // will be set as `this.fastboot` on the component. If not,
-      // `this.fastboot` will be `undefined`.
-      fastboot: injectOptional.service()
-    });
+```js
+import injectOptional from 'ember-inject-optional';
+
+export default Component.extend({
+  // if there is a service named fastboot available in the app, it
+  // will be set as `this.fastboot` on the component. If not,
+  // `this.fastboot` will be `undefined`.
+  fastboot: injectOptional.service()
+});
+```
 
 ## Installation
 
