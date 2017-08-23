@@ -11,8 +11,13 @@ export default Component.extend({
   // if there is a service named fastboot available in the app, it
   // will be set as `this.fastboot` on the component. If not,
   // `this.fastboot` will be `undefined`.
-  fastboot: injectOptional.service()
-});
+  fastboot: injectOptional.service(),
+  
+  // Just like Ember's built-in injection, you can pass an explicit
+  // service name instead of relying on the implicit one derived
+  // from your local property name:
+  tools: injectOptional.service('cardstack-tools') 
+}); 
 ```
 
 ## Installation
